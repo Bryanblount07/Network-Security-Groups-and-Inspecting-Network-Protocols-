@@ -55,7 +55,7 @@ Inside your VM bring open up microsoft edge and type in google. Then type in "Do
 <img src="https://imgur.com/lENlipV.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Click on the shark icon to start capturing packets. This will capture live packets. Click on the search within the wireshark and type ICMP & press enter. There should be no traffic coming through now.
+Click on the shark icon to start capturing packets. This will capture live packets. Click on the search within the wireshark and type ICMP (to filter) & press enter. There should be no traffic coming through now.
 </p>
 <br />
 
@@ -64,5 +64,13 @@ Click on the shark icon to start capturing packets. This will capture live packe
 </p>
 <p>
 Now we have to open up powershell and we're going to ping the private ip address in VM 2. 
+</p>
+<br />
+
+<p>
+<img src="https://imgur.com/dkpL3wB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now we're going to block ICMP traffic on VM 2 firewall. Go to your VM 2 network security group (NSG). So now we can block ping coming from VM 1. Edit the Inbound rules. Create another rule. After it should be denying ping. Then go back and allow it to allow pings again.  
 </p>
 <br />
