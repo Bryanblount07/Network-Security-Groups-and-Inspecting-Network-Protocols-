@@ -74,3 +74,35 @@ Now we have to open up powershell and we're going to ping the private ip address
 Now we're going to block ICMP traffic on VM 2 firewall. Go to your VM 2 network security group (NSG). So now we can block ping coming from VM 1. Edit the Inbound rules. Create another rule. After it should be denying ping. Then go back and allow it to allow pings again.  
 </p>
 <br />
+
+<p>
+<img src="https://imgur.com/pff3var.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now we're going filter SSH traffic in Wireshark. So we're going to connect VM 1 into VM 2 via wireshark. So go into wireshark in your VM 1 & bring up command prompt. type in ssh & your user name @ VM 2 private ip address. EX: ssh labuser@10.0.0.4. After looking through that type exit to go back to your regular VM.
+</p>
+<br />
+
+<p>
+<img src="https://imgur.com/NnnK3cL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now we're going to vie some DHCP traffic. in your filter in wireshark type DHCP. Then go back to your cmd prompt and type ipconfig /renew. It should disconnect then reconnect.
+</p>
+<br />
+
+<p>
+<img src="https://imgur.com/cTaltGX.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Go back to wireshark & filter for DNS so we can see if we can get the IPv4 & IPv6 addresses. In your cmd prompt us nslookup google.com
+</p>
+<br />
+
+<p>
+<img src="https://imgur.com/qKFuu6w.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lastly were going to observe RDP. In your wireshark filter type (tcp.port==3389) and just observe the traffic.
+</p>
+<br /> 
